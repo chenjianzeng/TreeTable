@@ -1,0 +1,49 @@
+body{
+    font-size:14px;
+}
+ul,li{
+    list-style:none;
+    margin:0px;             
+}
+.rootNode{
+    border-left:1px solid #ff6000;  
+}
+.firstNodeBorder{
+    border-left:1px solid #ff6000;  
+}
+.treeTable li.selected{
+    background-color:green;
+}
+.treeTable div.selected{
+    background-color:green;
+}
+.treeTable li{
+    float:left;
+    border-top:1px solid #ff6000;
+    border-bottom:1px solid #ff6000;    
+    border-right:1px solid #ff6000;     
+    height:30px; 
+    line-height:30px; 
+    padding:0px 13px;
+}
+.childUl{
+    clear:both;
+    margin-left:-40px;
+}
+.childUl>li{
+    border-top:0px;
+} 
+.treeTable li div{      
+    height:30px;    
+    line-height:30px; 
+    padding-left:13px; 
+    border-right:1px solid #ff6000; 
+    border-bottom:1px solid #ff6000;
+}
+.treeTable li.parentLi{
+    padding-left:0px;
+    padding-right:0px;
+    padding-bottom:0px;
+    border-right:0px;
+    border-bottom:0px;
+}

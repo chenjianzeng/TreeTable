@@ -1,0 +1,180 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="./css/TreeTable.css">
+	</head>
+	<body>
+		<div id="old"></div>
+		<div style="clear:both;"></div>
+		<hr/>
+		预览<div id="preview"></div>
+		<script type="text/javascript" src="./lib/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="./js/TreeTable.js"></script>
+	    <script type="text/javascript">
+		var data={
+		    singletree:[
+		    {
+		        "title": "编码",
+		        "field": "code",
+		        "candidate": false
+		    },
+		    {
+		        "title": "名称",
+		        "field": "name",
+		        "candidate": true
+		    },
+		    {
+		        "title": "年龄",
+		        "field": "age",
+		        "candidate": true
+		    },
+		    {
+		        "title": "性别",
+		        "field": "sex",
+		        "candidate": true
+		    }],
+		    doubletree:[
+		    {
+		        "title": "编码",
+		        "field": "code",
+		        "candidate": false
+		    },
+		    {
+		        "title": "基本信息",
+		        "open": true,
+		        "children": [
+		            {
+		                "title": "名称",
+		                "field": "name",
+		                "candidate": true
+		            },
+		            {
+		                "title": "年龄",
+		                "field": "age",
+		                "candidate": true
+		            },
+		            {
+		                "title": "性别",
+		                "field": "sex",
+		                "candidate": true
+		            }
+		        ]
+		    },
+		    {
+		        "title": "工作信息",
+		        "open": true,
+		        "children": [
+		            {
+		                "title": "职位",
+		                "field": "office",
+		                "candidate": true
+		            },
+		            {
+		                "title": "职称",
+		                "field": "call",
+		                "candidate": true
+		            },
+		            {
+		                "title": "所在楼层",
+		                "field": "place",
+		                "candidate": true
+		            }
+		        ]
+		    }],
+		    threetree:[
+		    {
+		        "title": "编码",
+		        "field": "code",
+		        "candidate": false
+		    },
+		    {
+		        "title": "基本信息",
+		        "open": true,
+		        "children": [
+		            {
+		                "title": "名称",
+		                "field": "name",
+		                "candidate": true
+		            },
+		            {
+		                "title": "年龄",
+		                "field": "age",
+		                "candidate": true
+		            },
+		            {
+		                "title": "性别",
+		                "field": "sex",
+		                "candidate": true
+		            },
+		            {
+		                "title": "教育相关",
+		                "open": true,
+		                "children": [
+		                    {
+		                        "title": "最高学历",
+		                        "field": "education",
+		                        "candidate": true
+		                    },
+		                    {
+		                        "title": "毕业学校",
+		                        "field": "college",
+		                        "candidate": true,
+				                "children": [
+				                    {
+				                        "title": "最高学历",
+				                        "field": "education",
+				                        "candidate": true
+				                    },
+				                    {
+				                        "title": "毕业学校",
+				                        "field": "college",
+				                        "candidate": true,
+						                "children": [
+						                    {
+						                        "title": "最高学历",
+						                        "field": "education",
+						                        "candidate": true
+						                    },
+						                    {
+						                        "title": "毕业学校",
+						                        "field": "college",
+						                        "candidate": true
+						                    }
+						                ]
+				                    }
+				                ]
+		                    }
+		                ]
+		            }
+		        ]
+		    },
+		    {
+		        "title": "工作信息",
+		        "open": true,
+		        "children": [
+		            {
+		                "title": "职位",
+		                "field": "office",
+		                "candidate": true
+		            },
+		            {
+		                "title": "职称",
+		                "field": "call",
+		                "candidate": true
+		            },
+		            {
+		                "title": "所在楼层",
+		                "field": "place",
+		                "candidate": true
+		            }
+		        ]
+		    }]
+		};
+
+
+	    TreeTable.init(data.threetree,$("#old"),{
+	    	previewTargets:["#preview"]
+	    }); //初始化
+		</script>
+		</body>
+</html>
